@@ -22,13 +22,25 @@
 }
 
 .road {
-    position: absolute;
-    height: 50px;
+    position: absolute;height: 50px;
     width: 250px;
+    height: 55px;
     top: 0;
     left: 200px;
     text-align: center;
     color: white;
     background-color: #444444;
     border-radius: 2px;
+}
+
+.playerCar {
+    position: absolute;
+    height: 80px;
+    width: 40px;
+    bottom: 60px;
+    left: 250px;
+    border-radius: 5px;
+    background-image: url(/img/car1.png);
+    background-size: cover;
+    z-index: 100;
 }

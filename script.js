@@ -14,6 +14,7 @@ document.addEventListener('keyup', pressKeyOff);
 // game variables 
 let animationGame = requestAnimationFrame(playGame);
 let gamePlay = false;
+let player;
 
 let keys = {
     ArrowUp: false,
@@ -25,12 +26,19 @@ let keys = {
 // game functions
 function startGame(){
     console.log(gamePlay);
+    btnStart.style.display = 'none'; // takes off the start btn after user clicked for the first time
     var div = document.createElement('div');
     div.setAttribute('class', 'playerCar');
     div.x = 250;
     div.y = 500;
     container.appendChild(div);
     gamePlay = true;
+    player = {
+        speed: 1,
+        lives: 3,
+        gameScore: 0,
+        carstoPass: 10 
+    }
 }
 
 function pressKeyOn(){
@@ -38,9 +46,16 @@ function pressKeyOn(){
 function pressKeyOff(){
 }
 
+function updateDash(){
+    console.log(player);
+    // scoreDash.innerHTML = player.score; 
+    // lifeDash.innerHTML = player.lives;
+    // speedDash.innerHTML = player.speed;
+}
+
 function playGame(){
     if(gamePlay){
-        console.log('Game in play');
+        updateDash();
     }
     animationGame = requestAnimationFrame(playGame)
 };
